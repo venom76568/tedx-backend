@@ -11,8 +11,7 @@ const resolvers = require("./graphql/resolvers");
 (async () => {
   const app = express();
   const server = new ApolloServer({ typeDefs, resolvers });
-
-  // Connect to MongoDB
+ 
   try {
     await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
@@ -23,10 +22,9 @@ const resolvers = require("./graphql/resolvers");
     console.error("MongoDB connection failed:", err);
     process.exit(1);
   }
-
-  // Start Apollo Server
+ 
   await server.start();
-  app.use(cors());
+  app.use(cors({ origin: "https://www.tedxvnit.com" }));
   app.use(bodyParser.json());
   app.use("/", expressMiddleware(server));
 

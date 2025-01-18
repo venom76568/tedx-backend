@@ -15,6 +15,7 @@ const resolvers = {
           data: savedForm,
         };
       } catch (err) {
+        console.error("Error during form submission:", err);
         return {
           code: 400,
           message: "Form submission failed",
