@@ -24,7 +24,7 @@ const resolvers = require("./graphql/resolvers");
   }
 
   await server.start();
-  app.use(cors({ origin: "https://www.tedxvnit.com" }));
+  app.use(cors());
   app.use(bodyParser.json());
   app.use("/graphql", expressMiddleware(server));
 
