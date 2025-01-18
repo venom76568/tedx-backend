@@ -24,7 +24,15 @@ const resolvers = require("./graphql/resolvers");
   }
 
   await server.start();
-  app.use(cors({ origin: "https://www.tedxvnit.com" }));
+  const corsOptions = {
+    origin: ["http://localhost:3001", "https://www.tedxvnit.com"], // Allow specific origins
+    methods: ["GET", "POST", "OPTIONS"], // Allowed HTTP methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+    credentials: true, // Allow cookies and authorization headers
+  };
+
+  app.use(cors(corsOptions));
+  app.use(cors());
   app.use(bodyParser.json());
   app.use("/graphql", expressMiddleware(server));
 
