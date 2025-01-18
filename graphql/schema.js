@@ -8,6 +8,7 @@ const typeDefs = gql`
     affiliation: String!
     college: String
     id_type: String!
+    others: String
   }
 
   type Form {
@@ -18,6 +19,7 @@ const typeDefs = gql`
     affiliation: String!
     college: String
     id_type: String!
+    others: String
   }
 
   type Response {
