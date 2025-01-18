@@ -7,7 +7,6 @@ const formSchema = new mongoose.Schema({
   affiliation: { type: String, required: true },
   college: { type: String },
   id_type: { type: String, required: true },
-  others: { type: String },
 });
 
 module.exports = mongoose.model("Form", formSchema);
