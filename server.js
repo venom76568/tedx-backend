@@ -33,10 +33,10 @@ const resolvers = require("./graphql/resolvers");
 
   app.use(cors(corsOptions));
   app.use(bodyParser.json());
-  app.use("/graphql", expressMiddleware(server));
+  app.use("/", expressMiddleware(server));
 
   const PORT = process.env.PORT || 4000;
   app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}/graphql`);
+    console.log(`Server running at http://localhost:${PORT}/`);
   });
 })();
