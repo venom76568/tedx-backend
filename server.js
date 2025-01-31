@@ -25,7 +25,11 @@ const resolvers = require("./graphql/resolvers");
 
   await server.start();
   const corsOptions = {
-    origin: ["http://localhost:3001", "https://www.tedxvnit.com"], // Allow specific origins
+    origin: [
+      "http://localhost:3000",
+      "https://www.tedxvnit.com",
+      "https://tedx-regis-live.vercel.app",
+    ], // Allow specific origins
     methods: ["GET", "POST", "OPTIONS"], // Allowed HTTP methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
     credentials: true, // Allow cookies and authorization headers
